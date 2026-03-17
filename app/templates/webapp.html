@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZontTech Shop Mini App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<div class="container">
+  <h1>🛍 ZontTech Shop</h1>
+  <p id="hello"></p>
+
+  <section class="card">
+    <h2>Новое объявление</h2>
+    <div class="grid">
+      <select id="ad_type">
+        <option value="buy">Покупка</option>
+        <option value="sell">Продажа</option>
+        <option value="exchange">Обмен</option>
+      </select>
+      <select id="country"></select>
+      <input id="title" placeholder="Название" />
+      <textarea id="description" placeholder="Описание"></textarea>
+      <input id="price" placeholder="Цена" />
+      <input id="photo_file_id" placeholder="photo_file_id (из @RawDataBot)" />
+      <button id="submit">Отправить на модерацию</button>
+    </div>
+    <small>Для продажи/обмена photo_file_id обязателен.</small>
+  </section>
+
+  <section class="card">
+    <h2>Профиль</h2>
+    <img id="avatar" class="avatar" alt="avatar" />
+    <p id="profile_stats"></p>
+    <ul id="profile_ads"></ul>
+  </section>
+
+  <section class="card hidden" id="mod_panel">
+    <h2>Модерация</h2>
+    <div id="pending_list"></div>
+  </section>
+
+  <section class="card hidden" id="chief_panel">
+    <h2>Панель главного модератора</h2>
+    <input id="mod_id" placeholder="ID нового модератора" />
+    <button id="add_mod">Добавить модератора</button>
+    <button id="list_mods">Обновить список модераторов</button>
+    <ul id="mods"></ul>
+
+    <h3>Опубликованные объявления (редактирование/удаление)</h3>
+    <div id="published"></div>
+  </section>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
